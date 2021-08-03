@@ -1,0 +1,33 @@
+<h2>Thêm mới sản phẩm</h2>
+<form class="w-75">
+  <div class="py-2">
+    <label>Link ảnh</label>
+    <input class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="image" type="text"
+      placeholder="Link ảnh">
+  </div>
+  <div class="py-2">
+    <label>Tên sản phẩm</label>
+    <input class="form-control" [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="name"
+      placeholder="Tên sản phẩm">
+  </div>
+  <div class="py-2">
+    <label for="">Giá</label>
+    <input class="form-control" [ngModelOptions]="{standalone: true}" type="number" [(ngModel)]="price"
+      placeholder="Giá">
+  </div>
+  <div class="py-2">
+    <label for="">Số lượng</label>
+    <input class="form-control" [ngModelOptions]="{standalone: true}" type="number" [(ngModel)]="quantity"
+      placeholder="Số lượng">
+  </div>
+  <div class="py-2">
+    <label for="">Tình trạng</label>
+    <select class="form-control" placeholder="Tình trạng" [(ngModel)]="status" [ngModelOptions]="{standalone: true}">
+      <option value="true">Còn hàng</option>
+      <option value="false">Hết hàng</option>
+    </select>
+  </div>
+
+  <button (click)="onAdd()" class="btn btn-primary">Thêm mới</button>
+
+</form>

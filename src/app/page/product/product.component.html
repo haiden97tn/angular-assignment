@@ -1,0 +1,35 @@
+<h2>Thêm mới nhân viên</h2>
+<form></form>
+<hr>
+<div class="row">
+  <!-- <p>{{ valueInput }}</p>
+  <input type="text" [(ngModel)]="valueInput"> -->
+  <div class="col-3 my-3" *ngFor="let x of listProduct">
+    <div class="card text-center" style="width: 18rem;">
+      <img src={{x.image}} class="card-img-top" height="200px">
+      <div class="card-body">
+        <h5 class="card-title">{{ x.name }}</h5>
+        <p class="card-text">{{ x.price }}
+        </p>
+        <p class="text-primary">{{ x.status? 'Còn hàng' : 'Hết hàng' }}</p>
+        <button class="btn btn-primary" [routerLink]="['/products',x._id]" routerLinkActive="router-link-active"
+          (click)="onUpdate(x)">Chi tiết</button>
+        <button class="btn btn-danger" (click)="onRemove(x)">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <h2>Total vote from children: {{ vote }}</h2>
+<app-posts [childMessage]="parentMessage" (voteSize)="voteCount($event)"></app-posts> -->
+<hr>
+<!-- <h3>Truyền dữ liệu giữa các component cha và con</h3> -->
+<hr>
+<div class="row">
+  <div class="col-6">
+    <!-- <app-product-add (dataNew)="onAddPro($event)"></app-product-add> -->
+  </div>
+  <div class="col-6">
+    <!-- <app-product-detail [data]="detailPro"></app-product-detail> -->
+  </div>
+
+</div>

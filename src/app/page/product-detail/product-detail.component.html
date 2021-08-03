@@ -1,0 +1,40 @@
+<h2>Chi tiết nhân viên</h2>
+<div *ngIf="infoPro">
+  <form class="w-75">
+    <div class="py-2">
+      <label for="">Id</label>
+      <input class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="infoPro._id" type="text"
+        placeholder="Id" readonly>
+    </div>
+    <div class="py-2">
+      <label for="">Link anh</label>
+      <input class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="infoPro.image" type="text"
+        placeholder="Link ảnh">
+    </div>
+    <div class="py-2">
+      <label for="">Ten san pham</label>
+      <input class="form-control" [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="infoPro.name"
+        placeholder="Tên sản phẩm">
+    </div>
+    <div class="py-2">
+      <label for="">Gia</label>
+      <input class="form-control" [ngModelOptions]="{standalone: true}" type="number" [(ngModel)]="infoPro.price"
+        placeholder="Giá">
+    </div>
+    <div class="py-2">
+      <label for="">So luong</label>
+      <input class="form-control" [ngModelOptions]="{standalone: true}" type="number" [(ngModel)]="infoPro.quantity"
+        placeholder="Số lượng">
+    </div>
+    <div class="py-2">
+      <label for="">Tinh trang</label>
+      <select class="form-control" placeholder="Tình trạng" [(ngModel)]="infoPro.status"
+        [ngModelOptions]="{standalone: true}">
+        <option value="true">Còn hàng</option>
+        <option value="false">Hết hàng</option>
+      </select>
+    </div>
+    <button (click)="onUpdatePro()" class="btn btn-success">Cập nhật</button>
+
+  </form>
+</div>
